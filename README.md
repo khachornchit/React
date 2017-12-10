@@ -15,7 +15,7 @@ You need to install [node.js](https://nodejs.org/en/) and [npm](https://www.npmj
 1. Download this project into your folder
 2. Open the project with Visual Studio Code
 3. Select menu View => Integrated Terminal
-4. Excute command in the terminal => npm run pluto
+4. Execute command in the terminal => npm run pluto
 5. It will lunch Welcome page in the browser at http://localhost:5001/
 
 ## Running in Visual Studio Code
