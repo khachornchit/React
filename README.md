@@ -1,4 +1,4 @@
-![](images/cover-pluto-dev-server-center-background.png)
+![](images/cover-pluto-react-server-center-background.png)
 
 [Pluto Solutions](http://www.plutosols.com)
 [Facebook](https://www.facebook.com/plutosols/)
