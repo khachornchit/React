@@ -1,7 +1,10 @@
 {
   "name": "pluto.react.server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Setup readiness server for React development.",
+  "repository": {
+    
+  },
   "main": "app.js",
   "scripts": {
     "pluto": "webpack-dev-server",
