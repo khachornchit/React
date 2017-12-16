@@ -1,5 +1,5 @@
 {
-  "name": "pluto.react.server",
+  "name": "pluto-react-server",
   "version": "1.0.0",
   "description": "Setup readiness server for React development.",
   "repository": {
@@ -7,11 +7,11 @@
   },
   "main": "app.js",
   "scripts": {
-    "pluto": "webpack-dev-server",
+    "plutosols": "webpack-dev-server",
     "dev": "webpack -d --watch",
     "prod": "webpack -p"
   },
-  "author": "Kajornjit Songsaen",
+  "author": "Pluto Solutions <contact@plutosols.com> (http://www.plutosols.com)",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
