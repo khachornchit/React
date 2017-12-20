@@ -1,5 +1,2 @@
-![](images/cover-pluto-react-server-center-background.png)
-
-[Readme](https://github.com/plutosolutions/pluto-react-server/wiki) | 
-[Pluto Solutions](http://www.plutosols.com) | 
-[Facebook](https://www.facebook.com/plutosols/) | 
+[Readme](https://github.com/plutosolutions/pluto-react-server/wiki)
+![](https://github.com/plutosolutions/plutoSolutions-common/blob/master/images/logo%203d%201280x720/pluto-logo-quartz%201280x720.png)
