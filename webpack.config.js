@@ -1,10 +1,19 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
+var isProd = process.env.NODE_ENV === 'production';
+var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+var cssProd = ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: ['css-loader', 'sass-loader'],
+        publicPath: '/dist'
+});
+var cssConfig = isProd? cssProd: cssDev;
 
 module.exports = {
     entry: {
-        bundle: path.join(__dirname, "src", "js", "app.js")
+        boot: path.join(__dirname, "src", "controls", "boot.tsx")
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -14,40 +23,67 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract(
-                    {
-                        fallback: "style-loader",
-                        use: ['css-loader', 'sass-loader'],
-                        publicPath: '/dist'
-                    }
-                )
+                use: cssConfig
             },
-            { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
         ]
+    },
+    resolve: {
+      extensions: [ '.tsx', '.ts', '.js' ]
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        port: 5001,
+        port: 9000,
         stats: "errors-only",
-        open: true
+        open: true,
+        hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Pluto Solutions",
             filename: "index.html",
             template: './src/template/template-index.html',
             minify: {
                 collapseWhitespace: true
             },
-            hash: true
+            hash: true,
+            excludeChunks: ['contact']
+        }),
+        new HtmlWebpackPlugin({
+            filename: "contact.html",
+            template: './src/template/template-contact.html',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            chunks: ['contact']
+        }),
+        new HtmlWebpackPlugin({
+            filename: "about.html",
+            template: './src/template/template-about.html',
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            chunks: ['about']
         }),
         new ExtractTextPlugin(
             {
                 filename: "app.css",
-                disable: false,
+                disable: !isProd,
                 allChunks: true
             }
-        )
+        ),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
