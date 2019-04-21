@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+// using CommonJS modules
+const Router = require("react-router-dom").BrowserRouter;
+const Route = require("react-router-dom").Route;
+const Link = require("react-router-dom").Link;
 
 const RouterExample = () => (
   <Router>

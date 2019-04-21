@@ -122,7 +122,7 @@ export module Solutions {
                 <div>
                     <h1>Welcome to Pluto Solutions</h1>
                     <h2>This is a React quick start development</h2>
-                    <p>It is a readiness quick start server ready for React development in upcoming projects. Visit our website at <a href='http://www.plutosols.com'>www.plutosols.com</a></p>
+                    <p>It is a readiness quick start server ready for React development in upcoming projects. Visit our website at <a href='https://pluto-solutions.business.site/'>https://pluto-solutions.business.site/</a></p>
                     <table>
                         <THead name='Name' industry='Industry' sector='Sector' />
                         {rows}

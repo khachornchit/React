@@ -2,14 +2,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
-var isProd = process.env.NODE_ENV === 'production';
-var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
-var cssProd = ExtractTextPlugin.extract({
+let isProd = process.env.NODE_ENV === 'production';
+let cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+let cssProd = ExtractTextPlugin.extract({
         fallback: "style-loader",
         use: ['css-loader', 'sass-loader'],
         publicPath: '/dist'
 });
-var cssConfig = isProd? cssProd: cssDev;
+let cssConfig = isProd? cssProd: cssDev;
 
 module.exports = {
     entry: {
